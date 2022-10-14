@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+Token = Struct.new(:type, :value)
 
 class Tokenizer
     TOKEN_TYPES = [
@@ -8,6 +8,7 @@ class Tokenizer
         [:integer,      /\b[0-9]+\b/],
         [:oparen,       /\(/],
         [:cparen,       /\)/],
+        [:comma,        /,/],
     ]
 
     def initialize(code)
@@ -38,20 +39,3 @@ class Tokenizer
         raise RuntimeError.new("Couldn't match token on the #{@code.inspect}")
     end
 end
-
-class Parser
-    def initialize()
-        @tokens = tokens
-    end
-
-    def parse
-        
-    end
-end
-
-Token = Struct.new(:type, :value)
-
-tokens = Tokenizer.new(File.read("test.qs")).tokenize
-puts tokens.map(&:inspect).join("\n")
-tree = Parser.new(tokens).parse
-p tree
