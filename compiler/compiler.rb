@@ -5,7 +5,7 @@ require 'tokenizer.rb'
 require 'parser.rb'
 require 'generator.rb'
 
-tokens = Tokenizer.new(File.read("../src/main.qs")).tokenize
+tokens = Tokenizer.new(File.read("../src/main.at")).tokenize
 puts tokens.map(&:inspect).join("\n")
 tree = Parser.new(tokens).parse
 p tree
