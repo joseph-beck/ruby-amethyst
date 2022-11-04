@@ -13,3 +13,5 @@ end
 
 
 code must be written in a main.at file
+
+using: https://www.destroyallsoftware.com/screencasts/catalog/a-compiler-from-scratch
